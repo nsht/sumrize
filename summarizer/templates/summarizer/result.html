@@ -1,0 +1,16 @@
+
+
+
+{% if summary %}
+<div class="result_container">
+    <ul>
+     {% for sentence in summary %}
+         <li>{{sentence}}</li>
+     {% endfor  %}
+    </ul>
+ </div>
+ {% else %}
+ <p>No summary available :(</p>
+{% endif%}
+
+

@@ -1,0 +1,25 @@
+
+
+{% extends "summarizer/base.html" %}
+
+{% block content %}
+<div class="scontainer">
+<form action="{% url 'summarizer:summarize'%}" method="post" class="summ-form">
+    <div class="summ-header-text">
+        <label for= "url_input"><h3>Enter Article Url</h3></label>
+    </div>
+    {% csrf_token %}
+    <div class="summ-url-form">
+        <input id="url_input" type="url" name="url" required><br>
+        <input id="submit_btn" class="btn" type="submit" value="Summarize Article" />
+        <div class="progress" id="loadingmessage" style='display:none'>
+                <div class="indeterminate"></div>
+        </div>
+    </div>
+
+</form>
+<div class="result">
+</div>
+</div>
+
+{% endblock %}
